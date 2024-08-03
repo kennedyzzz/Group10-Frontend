@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(67, 61, 139);
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-content: top;
+    background-color: rgb(253, 251, 251); 
+    padding: 1.7rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-brand-text{
+    color: rgb(67, 61, 139);
+    transition: color 0.3s ease;
+}
+
+.nav-brand:hover .nav-brand-text {
+    color: rgb(200, 172, 214);
+}
+
+.nav-link {
+    color: rgb(67, 61, 139) !important;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color:rgb(67, 61, 139)  !important;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: rgb(196, 160, 214);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.cards{
+    margin-top: 150px;
+}
