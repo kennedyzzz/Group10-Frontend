@@ -1,10 +1,9 @@
-// src/Cart.js
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Use useNavigate from react-router-dom
+import { useNavigate } from "react-router-dom"; 
 
 function Cart() {
   const [cart, setCart] = useState([]);
-  const navigate = useNavigate(); // Initialize navigate function
+  const navigate = useNavigate(); 
 
   const addToCart = (item) => {
     setCart((prevCart) => {
@@ -39,7 +38,7 @@ function Cart() {
   };
 
   const handleProceedToCheckout = () => {
-    navigate("/checkout"); // Use navigate function
+    navigate("/checkout"); 
   };
 
   return (
