@@ -15,6 +15,7 @@ import Jackets from './components/Jackets';
 import Hoodies from './components/Hoodies';
 import CropTops from './components/CropTops';
 import Wishlist from './components/Wishlist';
+import ProductReview from './components/ProductReview';
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
         </Routes>
       </Router>
+      <h1>Product Reviews</h1>
+      <ProductReview />
     </div>
   )
 }
