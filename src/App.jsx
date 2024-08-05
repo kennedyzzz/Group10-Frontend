@@ -5,7 +5,8 @@ import Contact from './pages/Contact';
 import Catalog from './pages/Catalog';
 import Home from './pages/Home';
 import Logout from './components/LogOut';
-import LogIn from './components/LogIn';
+import LogIn from './components/Login/LogIn';
+import SignUp from './components/Signup/Signup'; 
 import Cart from './components/Cart';
 import AboutUs from './components/AboutUs';
 import TShirts from './components/T-Shirts';
@@ -21,7 +22,8 @@ function App() {
     <div className="app">
       <Router>
         <Routes>
-        <Route path="/login" element={<LogIn />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/signup" element={<SignUp />} /> 
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/contact" element={<Contact />} />
@@ -41,4 +43,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
