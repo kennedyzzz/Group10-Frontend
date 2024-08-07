@@ -38,6 +38,10 @@ function NavigationBar() {
               WISHLIST
             </Nav.Link>
             <Nav.Link href="/logout">LOGOUT</Nav.Link>
+            <Nav.Link eventKey={2} href="/add-product">
+              ADD PRODUCT
+            </Nav.Link>
+           
           </Nav>
         </Navbar.Collapse>
       </Container>

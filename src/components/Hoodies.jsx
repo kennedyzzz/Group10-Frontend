@@ -1,26 +1,48 @@
-import React from 'react'
-import NavigationBar from './NavigationBar'
-import { Button, Card, Container } from 'react-bootstrap'
+import React, { useState } from 'react';
+import NavigationBar from './NavigationBar';
+import { Button, Card, Container } from 'react-bootstrap';
+import ProductReview from './ProductReview';
+const Hoodies = () => {
+  // State to hold the list of hoodies
+  const [hoodies, setHoodies] = useState([
+    { id: 1, title: 'Hoodie 1', name: 'Hoodie Name 1', price: '$40.00', imgSrc: 'https://theelegance.pk/wp-content/uploads/2023/11/Buy-High-Quality-Custom-Your-Design-Here-Hoodies.webp' },
+    { id: 2, title: 'Hoodie 2', name: 'Hoodie Name 2', price: '$45.00', imgSrc: 'https://huckberry.imgix.net/spree/products/733913/original/40772_Flint_and_Tinder_10-Year_Full_Zip_Hoodie_Black_01.jpg?auto=format%2C%20compress&crop=top&fit=fill&cs=tinysrgb&ar=4%3A5&fill=solid&fill-color=FFFFFF&ixlib=react-9.8.1' },
+    // Add more hoodies as needed
+  ]);
 
-function Hoodies() {
+  // Function to handle deleting a hoodie
+  const handleDelete = (id) => {
+    setHoodies(hoodies.filter(hoodie => hoodie.id !== id));
+  };
+
   return (
     <div>
-        <NavigationBar />
-        <Container>
+      <NavigationBar />
+      <Container>
         <div className='cards'>
-        <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Button variant="primary">Go somewhere</Button>
-        <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>name</Card.Text>
-        <Card.Text>price</Card.Text>
-      </Card.Body>
-    </Card>
+          {hoodies.map(hoodie => (
+            <Card key={hoodie.id} style={{ width: '18rem', margin: '10px' }}>
+              <Card.Img variant="top" src={hoodie.imgSrc} />
+              <Card.Body>
+                <Card.Title>{hoodie.title}</Card.Title>
+                <Card.Text>{hoodie.name}</Card.Text>
+                <Card.Text>{hoodie.price}</Card.Text>
+                <Button variant="secondary">Go somewhere</Button>
+                <Button 
+                  variant="danger" 
+                  onClick={() => handleDelete(hoodie.id)} 
+                  style={{ marginLeft: '10px' }}
+                >
+                  Delete
+                </Button>
+                <ProductReview/>
+              </Card.Body>
+            </Card>
+          ))}
         </div>
-        </Container>
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Hoodies
+export default Hoodies;

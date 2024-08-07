@@ -16,6 +16,7 @@ import Hoodies from './components/Hoodies';
 import CropTops from './components/CropTops';
 import Wishlist from './components/Wishlist';
 import ProductReview from './components/ProductReview';
+import ProductManager from './components/ProductManager';
 
 function App() {
   return (
@@ -36,10 +37,11 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/add-product" element={<ProductManager/>} />
         </Routes>
       </Router>
-      <h1>Product Reviews</h1>
-      <ProductReview />
+     
+      
     </div>
   )
 }
